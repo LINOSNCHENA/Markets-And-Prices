@@ -22,27 +22,37 @@ npm run serve
 
 ```
 
-## Sample route links
+## Sample localhost links
 
 ## Get(1)
-```
+
 http://localhost:8040/api/markets/listed
-```
+
 ## Post(5)
-```
-http://localhost:8040/api/markets/selected/2020/08/01
-http://localhost:8040/api/markets/selected/2020/11/02
-http://localhost:8040/api/markets/selected/2020/12/03
-http://localhost:8040/api/markets/selected/2021/01/04
-http://localhost:8040/api/markets/selected/2022/03/25
 
-```
+http://localhost:8040/api/markets/selected/2020/08/01 \
+http://localhost:8040/api/markets/selected/2020/11/02 \
+http://localhost:8040/api/markets/selected/2020/12/03 \
+http://localhost:8040/api/markets/selected/2021/01/04 \
+http://localhost:8040/api/markets/selected/2022/03/25 \
 
-## Screen shots
 
-1.
-2.
-3.
+## Functionality
+
+1. Access records form API
+2. Limit accessible dates of the data
+3. View data as a Table and Chart
+
+## User View Experience
+
+Below are screen shots from the application's output
+
+![ M#1 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
+![ M#2 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
+![ M#3 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
+![ M#4 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
+![ M#5 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
+![ M#6 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
 
 
 # END

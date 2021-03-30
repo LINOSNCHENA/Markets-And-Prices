@@ -63,16 +63,6 @@ public class ExcelMarketsController {
     }
   }
 
-  // THIRD-2
-  @GetMapping("/download")
-  public ResponseEntity<Resource> getFile() {
-    String filename = "MarketDownloaded.xls";
-    InputStreamResource file = new InputStreamResource(fileService.load());
-
-    return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + filename)
-        .contentType(MediaType.parseMediaType("application/vnd.ms-excel")).body(file);
-  }
-
   // FOUR-3
   @PostMapping(path = "/updatedatabase/{year}/{month}/{day}") // GET #2A
   public ResponseEntity<ResponseMessage> recieveDateValues(@PathVariable("year") String year,
@@ -93,12 +83,9 @@ public class ExcelMarketsController {
 } catch (IOException e) {
     e.printStackTrace();
 }
-
-try {
- 
+try { 
   File myFile = new File(reportA2);
   File myFile2 = new File(reportC2);
-
   if (myFile.createNewFile()){
    System.out.println("2 Files is created!");
   }else{
@@ -108,14 +95,12 @@ try {
  } catch (IOException e) {
   e.printStackTrace();
  }
-    /// PartOne
-    //https://www.ote-cr.cz/pubweb/attachments/27/2021/month03/day25/25_03_2021_EN.xls
+   
     String dateUpdated = "Z" + year + "" + month + "" + day;
-    System.out.println(day+"<-day-month->"+month+":Is month/Day # greater than 9?  size of month=>"+month.length()+"of day =>"+day.length());
+ 
     if(month.length()<2){month="0"+month;}
     if(day.length()<2){day="0"+day;}
-    System.out.println(day+"<-day-month->"+month+":Is month/Day # greater than 9?  size of month=>"+month.length()+"of day =>"+day.length());
-
+ 
     String sourceFile = "https://www.ote-cr.cz/pubweb/attachments/27/" + year + 
     "/month" + month + "/day" + day + "/" + day + "_" + month + "_" + year + "_EN.xls";
 
@@ -123,24 +108,17 @@ try {
     String destinationFile1 = "./localDB/" + "DATAONE.xls";
     String destinationFile2 = "./localDB/" + "DATAONE.xlsx";
 
-    String destinationFile3 = "./localDB/" + "DATATWO.xls";
-    String destinationFile4 = "./localDB/" + "DATATWO.xlsx";
 
     System.out.println("");
     System.out.println("---------------------------");
     System.out.println("=====|_Start_Downloading_Process_1_|=========");
-    System.out.println("");
-    System.out.println("Look for downloads in the folders listed below : ");
-    System.out.println("");
+     System.out.println("");
 
     System.out.println("");
     try {
       FileUtils.copyURLToFile(new URL(sourceFile), new File(destinationFile), 10500, 10500);
       FileUtils.copyURLToFile(new URL(sourceFile), new File(destinationFile1), 10500, 10500);
       FileUtils.copyURLToFile(new URL(sourceFile), new File(destinationFile2), 10500, 10500);
-
-      FileUtils.copyURLToFile(new URL(sourceFile), new File(destinationFile3), 10500, 10500);
-      FileUtils.copyURLToFile(new URL(sourceFile), new File(destinationFile4), 10500, 10500);
 
       System.out.println("File source #1 : "+sourceFile);
       System.out.println("File destin #2 : "+destinationFile);
@@ -161,8 +139,8 @@ try {
     firstTask.fromWebAPI2Excel();
     System.out.println("===============|HELPER_TWO_Completed|=============\n");
     List<String[]> cellValues = helper2Two.extractInfo(new File(reportA2));
-    cellValues.forEach(c -> System.out.println(c[0] + ", " + c[1] + ", " + c[2]
-     + ", " + c[3] + ", "  + c[4]));
+    // cellValues.forEach(c -> System.out.println(c[0] + ", " + c[1] + ", " + c[2]
+    //  + ", " + c[3] + ", "  + c[4]));
     helper2Two.writeToExcel(cellValues, new File(reportC2));
     System.out.println("\n=============|HELPER_THREE_Completed|============\n");
     System.out.println("");
@@ -177,13 +155,10 @@ try {
         return ResponseEntity.status(HttpStatus.OK).body(new ResponseMessage(message));
       } catch (Exception e) {
         message = "Could not upload correct format of the file: "+e;
-      //  System.out.println("Errror Explanation : " + e);
         return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new ResponseMessage(message));
       }
     }
     message = "Please check the condition of your excel file!";
     return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseMessage(message));
   }
-
-
 }
