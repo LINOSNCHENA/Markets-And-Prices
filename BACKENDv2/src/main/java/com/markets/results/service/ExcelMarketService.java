@@ -26,13 +26,7 @@ public class ExcelMarketService {
       throw new RuntimeException("fail to store excel data: " + e.getMessage());
     }
   }
-// Second load
-  public ByteArrayInputStream load() {
-    List<Markets> markets = repository.findAll();
-    ByteArrayInputStream in = ExcelMarkets.marketsToExcel(markets);
-    return in;
-  }
- 
+
   // Third
   public List<Markets> getAllMarkets() {
     return repository.findAll();
