@@ -42,6 +42,7 @@ http://localhost:8040/api/markets/selected/2022/03/25 \
 1. Access records form API
 2. Limit accessible dates of the data
 3. View data as a Table and Chart
+4. Testing(Pending)
 
 ## User View Experience
 
