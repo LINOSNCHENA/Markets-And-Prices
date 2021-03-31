@@ -2,7 +2,7 @@
 
 Sample applications for displaying some data on the dashboard as a Chart and as a Table. The sequence of execution is as follows; (1) Download source data from the API web, which is an MS Excel document. (2) Extract records from MS Excel and transform them into JSON data and then save it in the database. (3) Extract data from this database and then make it available through spring boot restful services. (4) The Vue frontend the receive from spring boot the data and then finally displays it in the table and the chart.
 
-## Technology stack
+## Technology stack utilized
 
 1. Spring-boot
 2. Vue Frontend
@@ -24,11 +24,11 @@ npm run serve
 
 ## Sample localhost links
 
-## Get(1)
+## get
 
 http://localhost:8040/api/markets/listed
 
-## Post(5)
+## post
 
 http://localhost:8040/api/markets/selected/2020/08/01 \
 http://localhost:8040/api/markets/selected/2020/11/02 \
