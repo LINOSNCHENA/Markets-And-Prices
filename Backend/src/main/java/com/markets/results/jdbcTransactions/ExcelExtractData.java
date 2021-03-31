@@ -1,4 +1,4 @@
-package com.markets.results.helper;
+package com.markets.results.jdbcTransactions;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -14,7 +14,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public final class helper2Two {
+public final class ExcelExtractData {
 
 	private static final int WHENBLANK = 0;
 
