@@ -1,6 +1,6 @@
 <template>
   <div class="box" style="text-align: center">
-    <div class="container" style="text-align: center">
+    <div class="container" style="text-align: left">
       <h2>
         <span>{{ nameTop }}</span>
       </h2>
