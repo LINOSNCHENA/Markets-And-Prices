@@ -1,9 +1,8 @@
-package com.markets.results.helper;
+package com.markets.results.jdbcTransactions;
 
 import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.Iterator;
@@ -13,16 +12,16 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class helper3three {
-
+public class ExcelToMySql {
     public void pushExcelToMySql() {
-
-        String jdbcURL = "jdbc:mysql://localhost:3306/PRESLY";
-        String username = "root";
-        String password = "Monze@2019";
-
-             String baseDir = ".";
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+        context.scan("com.markets.results.jdbcTransactions");
+        context.refresh();
+        DBConn dbConnection = context.getBean(DBConn.class);
+        context.close();
+        String baseDir = ".";
         String reportC = baseDir + "/localDB/DATA2.xls";
 
         int batchSize = 20;
@@ -35,8 +34,7 @@ public class helper3three {
 
             Sheet firstSheet = workbook.getSheetAt(1);
             Iterator<Row> rowIterator = firstSheet.iterator();
-
-            connection = DriverManager.getConnection(jdbcURL, username, password);
+            connection = dbConnection.getConnection();
             connection.setAutoCommit(false);
             String deleteSql = "DELETE from MARKETS where Hour > -1";
             PreparedStatement statementx = connection.prepareStatement(deleteSql);
@@ -48,7 +46,7 @@ public class helper3three {
 
             int count = 0;
 
-           // System.out.println("\n============|MYSQL-ISSUE|==============");
+            // System.out.println("\n============|MYSQL-ISSUE|==============");
             rowIterator.next();
             while (rowIterator.hasNext()) {
                 Row nextRow = rowIterator.next();

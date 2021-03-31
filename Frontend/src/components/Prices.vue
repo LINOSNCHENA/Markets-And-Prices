@@ -4,68 +4,64 @@
       <h2>
         <span>{{ nameTop }}</span>
       </h2>
-    </div>
 
-    <div class="container">
-      <h3>{{ nameDown }}</h3>
-      <form @submit.prevent="selectMarketDay">
-        <div class="form-group">
-          <vuejs-datepicker
-            format="dd-MM-yyyy"
-            placeholder="select a day for your report"
-            clear-button-icon="true"
-            v-model="dateChoice.date"
-            :disabled-dates="state.disabledDates"
-            lang="en"
-             @selected="selectMarketDay"
-          ></vuejs-datepicker>          
-        </div>
-        <div class="form-group">
-          
-          <!-- <button class="btn btn-success">Update data</button> -->
-        </div>
-      </form>
+      <div>
+        <h3>{{ nameDown }}</h3>
+        <vuejs-datepicker
+          format="dd-MM-yyyy"
+          placeholder="select a day for your report"
+          clear-button-icon="true"
+          v-model="dateChoice.date"
+          :disabled-dates="state.disabledDates"
+          lang="en"
+          @selected="selectMarketDay"
+        ></vuejs-datepicker>
+    
+      <h6>
+        Intra-Day Market Results: {{ dateChoice.date.toLocaleDateString() }}
+      </h6>
+ 
+      <section id="chart-One">
+        <chart v-if="loaded" :chart-data="marketData"> </chart>
+      </section>
+ </div>
+      <section id="chart-Two">
+        <table
+          class="table is-bordered is-striped is-narrow is-hoverable table is-bordered"
+        >
+          <thead>
+            <tr class="is-selected">
+              <th>Hour</th>
+              <th>Traded Volumes (MWh)</th>
+              <th>Weighted Average of the Prices (EUR/MWh)</th>
+              <th>Minimal Price(EUR/MWh)</th>
+              <th>Maximal Price (EUR/MWh)</th>
+              <th>Last Price(EUR/MWh)</th>
+            </tr>
+          </thead>
+          <tfoot>
+            <tr>
+              <th>Hour</th>
+              <th>Traded Volumes (MWh)</th>
+              <th>Weighted Average of the Prices (EUR/MWh)</th>
+              <th>Minimal Price(EUR/MWh)</th>
+              <th>Maximal Price (EUR/MWh)</th>
+              <th>Last Price(EUR/MWh)</th>
+            </tr>
+          </tfoot>
+          <tbody>
+            <tr v-for="(value, i) in marketData" :key="i">
+              <td>{{ value.hour }}</td>
+              <td>{{ value.tradedvolume }}</td>
+              <td>{{ value.averageprice }}</td>
+              <td>{{ value.minimumprice }}</td>
+              <td>{{ value.maximumprice }}</td>
+              <td>{{ value.lastprice }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </div>
-    <section id="chart-One">
-      <chart v-if="loaded" :chart-data="marketData"> </chart>
-    </section>
-    <h6>{{ dateChoice.date }}</h6>
-    <section id="chart-Two">
-      <table
-        class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth"
-      >
-        <thead>
-          <tr class="is-selected">
-            <th>Hour</th>
-            <th>Traded Volumes (MWh)</th>
-            <th>Weighted Average of the Prices (EUR/MWh)</th>
-            <th>Minimal Price(EUR/MWh)</th>
-            <th>Maximal Price (EUR/MWh)</th>
-            <th>Last Price(EUR/MWh)</th>
-          </tr>
-        </thead>
-        <tfoot>
-          <tr>
-            <th>Hour</th>
-            <th>Traded Volumes (MWh)</th>
-            <th>Weighted Average of the Prices (EUR/MWh)</th>
-            <th>Minimal Price(EUR/MWh)</th>
-            <th>Maximal Price (EUR/MWh)</th>
-            <th>Last Price(EUR/MWh)</th>
-          </tr>
-        </tfoot>
-        <tbody>
-          <tr v-for="(value, i) in marketData" :key="i">
-            <td>{{ value.hour }}</td>
-            <td>{{ value.tradedvolume }}</td>
-            <td>{{ value.averageprice }}</td>
-            <td>{{ value.minimumprice }}</td>
-            <td>{{ value.maximumprice }}</td>
-            <td>{{ value.lastprice }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
   </div>
 </template>
 
@@ -86,7 +82,7 @@ export default {
       nameDown: "Intra-Day Market",
       errors: [],
       marketData: [],
-        dateNow: new Date().getUTCDate(),
+      dateNow: new Date().getUTCDate(),
       dateChoice: { date: new Date() },
       loaded: false,
       state: {

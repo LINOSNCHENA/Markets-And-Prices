@@ -91,7 +91,7 @@ public class Markets {
 
   @Override
   public String toString() {
-    return ("Markets [Hour=" + ", hour=" + id + ", TV=" + Tradedvolume + ", MNPrice=" + Minimumprice + ", Max="
-        + Maximumprice + ", LPrice=" + Lastprice + "]");
+    return ("Markets [Hour = " + id + ", Traded Volume = " + Tradedvolume +
+     ", MIN = " + Minimumprice + ", MAX = "+ Maximumprice + ", LAST = " + Lastprice + "]");
   }
 }

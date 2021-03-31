@@ -1,4 +1,5 @@
-package com.markets.results.helper;
+package com.markets.results.jdbcTransactions;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -9,17 +10,17 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class helper1one {
+public class ExcelDeleteRows {
     public void fromWebAPI2Excel() throws EncryptedDocumentException, IOException {
 
-          String baseDir = ".";
+        String baseDir = ".";
         String reportSource = baseDir + "/LocalDB/DATAONE.xls";
         String reportA = baseDir + "/LocalDB/DATA1.xls";
 
         Workbook workbook = WorkbookFactory.create(new File(reportSource));
         Sheet sheet = workbook.getSheetAt(0);
         workbook.setSheetName(workbook.getSheetIndex(sheet), "PageOne");
-        int sheetsCounter = sheet.getLastRowNum() - 1;
+        sheet.getLastRowNum();
 
         sheet.setColumnWidth(0, 2000);
         sheet.setColumnWidth(1, 6000);
