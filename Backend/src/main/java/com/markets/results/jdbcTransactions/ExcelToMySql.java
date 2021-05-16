@@ -1,4 +1,4 @@
-package com.markets.results.jdbcTransactions;
+package com.markets.results.jdbctransactions;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +17,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class ExcelToMySql {
     public void pushExcelToMySql() {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-        context.scan("com.markets.results.jdbcTransactions");
+        context.scan("com.markets.results.jdbctransactions");
         context.refresh();
         DBConn dbConnection = context.getBean(DBConn.class);
         context.close();
@@ -37,16 +37,16 @@ public class ExcelToMySql {
             connection = dbConnection.getConnection();
             connection.setAutoCommit(false);
             String deleteSql = "DELETE from MARKETS where Hour > -1";
-            PreparedStatement statementx = connection.prepareStatement(deleteSql);
-            statementx.executeUpdate(deleteSql);
-
+            PreparedStatement statment4Delete = connection.prepareStatement(deleteSql);
+            // statment4Delete.executeUpdate(deleteSql);
+            statment4Delete.executeUpdate();
             String insertSql = "INSERT INTO MARKETS (HOUR,TRADEDVOLUME, AVERAGEPRICE,"
                     + "MINIMUMPRICE, MAXIMUMPRICE, LASTPRICE) VALUES (?,?,?,?,?,?)";
             PreparedStatement statement = connection.prepareStatement(insertSql);
 
             int count = 0;
 
-            // System.out.println("\n============|MYSQL-ISSUE|==============");
+ System.out.println("\n============|MYSQL-ISSUE-49|==============");
             rowIterator.next();
             while (rowIterator.hasNext()) {
                 Row nextRow = rowIterator.next();
@@ -105,7 +105,7 @@ public class ExcelToMySql {
             System.out.println("Error reading file");
             ex1.printStackTrace();
         } catch (SQLException ex2) {
-            System.out.println("Database error");
+            System.out.println("Database Mysql-Test error");
             ex2.printStackTrace();
         }
 
