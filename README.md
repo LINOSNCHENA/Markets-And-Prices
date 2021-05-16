@@ -6,17 +6,19 @@ Sample applications for displaying some data on the dashboard as a Chart and the
 
 1. Spring-boot
 2. Vue Frontend
-3. MySql Database
+3. MySql/Postgresql Database
 4. Source data API
 
 ## Commands to execute the application
 
 ```
 Backend
+==============================================
 mvn clean package
 mvn spring-boot:run
 
 Frontend
+==============================================
 npm i
 npm run serve
 
@@ -33,8 +35,6 @@ http://localhost:8040/api/markets/listed
 http://localhost:8040/api/markets/selected/2020/08/01 \
 http://localhost:8040/api/markets/selected/2020/11/02 \
 http://localhost:8040/api/markets/selected/2020/12/03 \
-http://localhost:8040/api/markets/selected/2021/01/04 \
-http://localhost:8040/api/markets/selected/2022/03/25 
 
 
 ## Functionality
@@ -49,13 +49,17 @@ http://localhost:8040/api/markets/selected/2022/03/25
 Below are screen shots from the application's output
 
 ![ M#1 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
-![ M#2 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
-![ M#3 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
-![ M#4 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
-![ M#5 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
-![ M#6 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
+![ M#2 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page2.png)
+![ M#3 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page3.png)
+![ M#4 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page4.png)
+![ M#5 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page5.png)
+![ M#6 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page6.png)
 
 
 ## Lecture #47
 
+```
+16/05/2021
+
+```
 # END
