@@ -1,4 +1,4 @@
-package com.markets.results.jdbcTransactions;
+package com.markets.results.jdbctransactions;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

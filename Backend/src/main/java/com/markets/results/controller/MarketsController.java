@@ -7,9 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-import com.markets.results.jdbcTransactions.ExcelDeleteRows;
-import com.markets.results.jdbcTransactions.ExcelExtractData;
-import com.markets.results.jdbcTransactions.ExcelToMySql;
+import com.markets.results.jdbctransactions.ExcelDeleteRows;
+import com.markets.results.jdbctransactions.ExcelExtractData;
+import com.markets.results.jdbctransactions.ExcelToMySql;
 import com.markets.results.message.ResponseMessage;
 import com.markets.results.model.Markets;
 import com.markets.results.service.MarketService;
@@ -49,7 +49,7 @@ public class MarketsController {
     }
   }
 
-  // function Two
+  // Function Two
   @PostMapping(path = "/updatedatabase/{year}/{month}/{day}")
   public ResponseEntity<ResponseMessage> recieveDateValues(@PathVariable("year") String year,
       @PathVariable("month") String month, @PathVariable("day") String day) throws IOException {
