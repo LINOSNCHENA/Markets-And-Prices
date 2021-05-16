@@ -58,6 +58,7 @@ Below are screen shots from the application's output
 
 ## Lecture #47
 
+
 ```
 16/05/2021
 
