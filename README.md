@@ -6,7 +6,7 @@ Sample applications for displaying some data on the dashboard as a Chart and the
 
 1. Spring-boot
 2. Vue Frontend
-3. MySql/Postgresql Database
+3. MySQL/Postgresql 
 4. Source data API
 
 ## Commands to execute the application
