@@ -53,12 +53,12 @@ http://172.16.184.235:4600/#/
 
 Below are screen shots from the application's output
 
-![ M#1 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page1.png)
-![ M#2 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page2.png)
-![ M#3 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page3.png)
-![ M#4 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page4.png)
-![ M#5 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page5.png)
-![ M#6 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/main/UxViews/page6.png)
+![ M#1 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/master/UxViews/page1.png)
+![ M#2 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/master/UxViews/page2.png)
+![ M#3 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/master/UxViews/page3.png)
+![ M#4 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/master/UxViews/page4.png)
+![ M#5 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/master/UxViews/page5.png)
+![ M#6 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/master/UxViews/page6.png)
 
 
 ## Lecture #47
