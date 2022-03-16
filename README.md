@@ -36,6 +36,11 @@ http://localhost:8040/api/markets/selected/2020/08/01 \
 http://localhost:8040/api/markets/selected/2020/11/02 \
 http://localhost:8040/api/markets/selected/2020/12/03 \
 
+## Complete App
+http://localhost:4600/#/  \
+http://localhost:4600/#/  \
+http://172.16.184.235:4600/#/ \
+
 
 ## Functionality
 
