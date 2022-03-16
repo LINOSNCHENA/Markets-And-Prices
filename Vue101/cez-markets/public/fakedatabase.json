@@ -1,0 +1,46 @@
+[
+  {
+    "id": 5,
+    "location": "Brno 1",
+    "abbr": "hc",
+    "time": "13:11 pm",
+    "temp": 25
+  },
+  {
+      "id": 6,
+      "location": "Brno 2",
+      "abbr": "c",
+      "time": "15:15 pm",
+      "temp": 57
+    },
+    {
+      "id": 1,
+      "location": "Prague 1",
+      "abbr": "s",
+      "time": "11:15 pm",
+      "temp": 56
+    },
+    {
+      "id": 2,
+      "location": "Prague 2",
+      "abbr": "hr",
+      "time": "12:20 pm",
+      "temp": 46
+    },
+    {
+      "id": 3,
+      "location": "Zlin 1",
+      "abbr": "c",
+      "time": "15:15 pm",
+      "temp": 17
+    },
+    {
+      "id": 4,
+      "location": "Zlin 2",
+      "abbr": "lc",
+      "time": "14:25 pm",
+      "temp": 85
+    }
+ 
+  ]
+
