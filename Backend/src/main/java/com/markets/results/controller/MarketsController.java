@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:4400", "http://localhost:4600" })
+@CrossOrigin(origins = { "http://localhost:4200", "http://localhost:4400", "http://localhost:4600", "http://172.16.184.235:4600" })
 @RequestMapping("/api/markets")
 public class MarketsController {
 
