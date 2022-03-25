@@ -1,4 +1,4 @@
-# DASHBOARD FOR STOCK MARKETS AND PRICES
+# STOCK MARKETS AND PRICES
 
 App for displaying some data on dashboard as a Chart and then as a Table. The sequence of execution is as follows; (1) Download source data from the API web, which is an MS Excel document. (2) Extract records from MS Excel and transform them into JSON data and then save it in the database. (3) Extract data from this database and then make it available through spring boot restful services. (4) The Vue frontend the receive from spring boot the data and then finally displays it in the table and the chart.
 
@@ -61,11 +61,12 @@ Below are screen shots from the application's output
 ![ M#6 ](https://github.com/LINOSNCHENA/Markets-and-stocks-prices-dashboard/blob/master/UxViews/page6.png)
 
 
-## Lecture #47
+## Lecture #55
 
 
 ```
 16/03/2022
+25/03/2022
 
 ```
 # END
